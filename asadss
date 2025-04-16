@@ -1,0 +1,13 @@
+local PetToChangeID = "PET ID TO CHANGE"
+local PetToGetID = "PET ID TO GET"
+
+while task.wait(0.1) do
+local playerData = require(game.ReplicatedStorage.ClientModules.Core.ClientData).get_data()[game.Players.LocalPlayer.Name]
+local pets = playerData.inventory.pets
+for i, v in pairs(pets) do
+    if v.kind == PetToChangeID then
+            v.kind = PetToGetID
+            v.id = PetToGetID
+        end
+end
+end
